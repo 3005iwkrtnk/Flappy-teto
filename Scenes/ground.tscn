@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://ber6rqn8y50mt"]
+
+[ext_resource type="Texture2D" uid="uid://bn7vib5prks81" path="res://Sprites/ground.jpg" id="1_688p1"]
+[ext_resource type="Script" uid="uid://b6o88h62v6gc2" path="res://Scripts/ground.gd" id="1_oltiy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oltiy"]
+size = Vector2(1730, 164)
+
+[sub_resource type="GDScript" id="GDScript_02qk3"]
+
+[node name="Ground" type="Area2D"]
+position = Vector2(0, 852)
+script = ExtResource("1_oltiy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_688p1")
+offset = Vector2(864, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(864, 2)
+shape = SubResource("RectangleShape2D_oltiy")
+script = SubResource("GDScript_02qk3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

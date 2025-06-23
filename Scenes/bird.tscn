@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cd0ai75msjupt"]
+
+[ext_resource type="Texture2D" uid="uid://c7vrcx45h04nu" path="res://Sprites/735b20f8-b656-4804-b897-d4a5ea02c6ef.png" id="1_i8bdw"]
+[ext_resource type="Script" uid="uid://d4n2ujnhx03n3" path="res://Scripts/bird.gd" id="1_mcegt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mcegt"]
+radius = 441.0
+height = 882.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dnvpi"]
+radius = 83.0
+height = 444.046
+
+[node name="Bird" type="CharacterBody2D"]
+script = ExtResource("1_mcegt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+scale = Vector2(-1, 1)
+texture = ExtResource("1_i8bdw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 114)
+shape = SubResource("CapsuleShape2D_mcegt")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(80, -570)
+rotation = 0.410152
+shape = SubResource("CapsuleShape2D_dnvpi")
